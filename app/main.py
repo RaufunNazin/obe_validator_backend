@@ -14,8 +14,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 origins = [
     "http://localhost:5173",
     "https://localhost:3000",
@@ -89,7 +87,7 @@ async def validate_obe(
             })
 
         # Load actual aligned labels from static directory
-        df = pd.read_excel("static/actual_aligned.xlsx")
+        df = pd.read_excel("actual_aligned.xlsx")
         aligned_list = df["Aligned"].astype(int).tolist()
 
         accuracy = float(accuracy_score(aligned_list, aligned_pred))  # Convert to float
