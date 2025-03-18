@@ -22,6 +22,7 @@ origins = [
     "https://localhost",
     "http://localhost:8000",
     "https://localhost:8000",
+    "https://obevalidatorfrontend-production.up.railway.app/validator"
 ]
 
 app.add_middleware(
