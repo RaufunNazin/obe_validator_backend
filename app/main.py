@@ -106,7 +106,7 @@ async def validate_obe(
 
         # Convert plot to base64 image
         buffer = BytesIO()
-        plt.savefig(buffer, format="png")
+        plt.savefig(buffer, format="png", dpi=60)
         buffer.seek(0)
         base64_img = base64.b64encode(buffer.getvalue()).decode("utf-8")
         buffer.close()
